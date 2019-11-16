@@ -1,0 +1,36 @@
+//mixin
+.container (@ancho, @alto, @color,@x, @x1, @radio, @posicion, @margen){
+	width: @ancho;
+	height: @alto;
+	background-color: @color;
+	position:  @posicion;
+	border-radius: @radio;
+	margin: @margen;
+}
+
+#circulo1{
+	.container(350px, 350px, red, 50%, 50%, 50%, absolute, 0px);
+}
+#circulo2{
+	.container(250px, 250px, white, 50%, 50%, 50%, absolute, 15%);
+}
+#circulo3{
+	.container(125px, 125px, blue, 50%, 50%, 50%, absolute, 25%);
+}
+//mixin
+.triangulo (@side) {
+     margin-top: 380px;
+	color:black;
+     background-color: white;
+     width: 0; 
+     height: 0;
+	border-color: black;
+     border-left: @side solid transparent;
+     border-right: @side solid transparent;
+     border-bottom: 100px solid white; 
+     position:absolute;
+}
+#triangulo1 {
+	.triangulo(50px);
+
+}
