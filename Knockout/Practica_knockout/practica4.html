@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ejemplo de KnockoutJS</title>
+    <script src="script/knockout.js"></script>
+
+</head>
+<body>
+    <ul data-bind="foreach: ciudades">
+        <li>
+            Pais: <b data-bind="text: name"></b>
+            <div data-bind="if: capital">
+                Capital: <b data-bind="text: capital.cityName"></b>
+            </div>
+        </li>
+    </ul>
+    <script>
+        
+        ko.applyBindings({
+            ciudades: [
+            {name: 'Argentina', capital: null},
+            {name: 'Paraguay', capital:{cityName:'Asuncion'}}
+            ]
+        });
+    </script>
+    <hr>
+    
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+.Contenedor(@alineacion, @fondo, @fuente, @negrita, @margen, @anchura, @altura, @color, @posicion, @superior, @radio, @margin_left ){
+	text-align: @alineacion;
+	background-color: @fondo;
+	font-size: @fuente;
+	font-weight: @negrita;
+	margin-top: @margen;
+	width: @anchura;
+	height: @altura;
+	color: @color;
+	position: @posicion;
+	padding-bottom: @superior;
+	border-radius: @radio;
+	margin-left: @margin_left;
+}
+
+body{
+	.Contenedor(center, black, 30px, 0px, 10px, 100%, 100%, lime, absolute, 0px, 0px, 0px);
+	border-color: black;
+	font-family: CONSOLE;
+}
+ul{
+	list-style: none;
+}
+hr{
+	border-color: lime;
+	width: 37%;
+}
+input{
+	height: 20px;
+	border-radius: 5px;
+	border-color: green;
+	text-align: right;
+	background-color: black;
+	color: red;
+}

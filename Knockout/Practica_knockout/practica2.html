@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ejemplo de KnockoutJS</title>
+    <script src="script/knockout.js"></script>
+
+</head>
+<body>
+    <div class="container">
+    <label><input type="checkbox" data-bind="checked: mostrarM">Mostrar Mensaje</label>
+
+    <div data-bind="if: mostrarM">Mostrar un mensaje por pantalla</div>
+
+        
+    
+    <script>
+        
+        ko.applyBindings({
+            mostrarM: ko.observable(false)
+        });
+    </script>
+    <hr>
+    
+    </div>
+    
+</body>
+</html>

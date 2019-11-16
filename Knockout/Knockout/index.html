@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Primer ejemplo de KnockoutJS</title>
+    <script src="scripts/knockout.js"></script>
+</head>
+<div data-bind="text: (id==0)? 'Hola': 'Adios'"></div>
+<div>
+	 <ul data-bind="foreach: libros"> 
+	
+	 <li data-bind="text: $data"></li> 
+	 <li data-bind="text: $data"></li> 
+	 <li data-bind="text: $data"></li> 
+	 <li data-bind="text: $data"></li> 
+	 
+	 </ul> 
+	 
+	 </div>
+<body>
+    <div>Nombre:
+    <input data-bind="value: nombre"  type="text" />
+	<input data-bind="value: apellido" type="text" />
+    </div>
+    <div>Su nombre   es  <span data-bind="text: nombre" /></div>
+	<div>Su apellido  es <span data-bind="text: apellido" /></div>
+	<div>Su apellido  es <span data-bind="text: mostrar" /></div>
+	 
+    <script>
+       var  ViewModel={
+	        nombre:"Juan Pablo"
+			nombre:  ko.observable("Juan Pablo"),
+			apellido:ko.observable("Prieto")
+			}
+			function Persona(){
+			 this.nombre=ko.observable("Pedro");
+			 this.apellido=ko.observable("Pisani");
+			this.mostrar=  ko.computed(function () {
+            return this.nombre + ' ' + this.apellido;
+			 var self=this;
+			  self.nombre=ko.observable("Pedro");
+			self.apellido=ko.observable("Pisani");
+			self.mostrar=  ko.computed(function () {
+             return self.nombre() + ' ' + self.apellido();
+			});
+			}
+        ko.applyBindings(ViewModel);
+	   ko.applyBindings(new Persona());
+	   
+	   
+	   //condicionales
+	   function VistaModelo() {
+	   var self = this; 
+	   self.id = 0; 
+	   };
+	   var NuevoVista = new VistaModelo(); 
+	   ko.applyBindings(NuevoVista);
+	   
+	   //Bucles
+	   function VistaModelo() { 
+	   var self = this; 
+	   self.libros = [ 'libro 1', 'libro 2', 'libro 3', 'libro 4' ];
+	   ko.applyBindings(new VistaModelo()); 
+	  }; 
+	 
+    </script>
+</body>
+</html>

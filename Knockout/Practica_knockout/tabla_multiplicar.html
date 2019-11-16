@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Primer ejemplo de KnockoutJS</title>
+    <script src="script/knockout.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css">  
+</head>
+<body>
+    Escriba un número para saber la tabla de multiplicar del 1 al 10:
+    <input data-bind="value: numero" type="number" />
+    <hr>
+    La tabla de multiplicar del número <span data-bind="text: numero"></span> es: <br>
+    <ul data-bind="foreach: resultados" />
+        <li data-bind="text: multiplicar"></li>
+    </ul>
+    <hr>
+    <script>
+        function ViewModel() {
+            var self = this;
+            self.numero = ko.observable(1);
+            self.resultados = ko.observableArray([{multiplicar: ''}]);            
+            self.tablaMultiplicar = ko.computed(function () {
+                self.resultados.removeAll();
+                for (var i = 1; i <= 10; i++) {
+                self.resultados.push({multiplicar: self.numero()+'x'+i+' = '+self.numero()*i});
+            }
+            });
+
+        }
+        // Activamos knockout.js
+        ko.applyBindings(new ViewModel());
+    </script>
+</body>
+</html>
