@@ -1,0 +1,28 @@
+.Mixin (@color,@fuente, @posicion, @align, @text_color, @ancho:500px, @margin_left: 30%, @alto:50px){
+	background-color: @color;
+	font-size: @fuente;
+	position:  @posicion;
+	text-align: @align;
+	color: @text_color;
+	width: @ancho;
+	margin-left: @margin_left;
+	height: @alto;
+}
+.contenedor1{
+	.Mixin(blue,26px,relative, center, white);
+}
+.contenedor2{
+	.Mixin(red,26px,relative, center, white);
+}
+.contenedor3{
+	.Mixin(yellow,26px,relative, center, black);
+}
+.contenedor4{
+	.Mixin(green,26px,relative, center, white);
+}
+.contenedor4{
+	.Mixin(green,26px,relative, center, white);
+}
+.contenedor5{
+	.Mixin(black,26px,relative, center, white);
+}

@@ -1,0 +1,47 @@
+/*Variables*/
+@alineacion:center;
+@fondo:#5dc1b9;
+@fuente:18px;
+@negrita: 2px;
+@margen: 10px;
+@anchura: 50px;
+@altura:15px;
+@color: yellow;
+@posicion: relative;
+@superior: 15px;
+@radio: 5px;
+
+/*creacion del mixin*/
+.Contenedor(@alineacion, @fondo, @fuente, @negrita, @margen, @anchura, @altura, @color, @posicion, @superior, @radio, @margin_left ){
+	text-align: @alineacion;
+	background-color: @fondo;
+	font-size: @fuente;
+	font-weight: @negrita;
+	margin-top: @margen;
+	width: @anchura;
+	height: @altura;
+	color: @color;
+	position: @posicion;
+	padding-bottom: @superior;
+	border-radius: @radio;
+	margin-left: @margin_left;
+}
+
+body{
+	.Contenedor(@alineacion, @fondo, @fuente, @negrita, 0px, 100%, 100%, @color, @posicion, 0px, 0px,0px);
+}
+
+#letra_capital{
+	float: left;
+	/*margin-left: 370px;*/
+	.Contenedor(center, 0, 30px, @negrita, 0px, 300px, 30px, red, absolute, 0px, 0px, 370px);
+}
+#continuidad{
+	float: left;
+	/*margin-left: 500px;*/
+	.Contenedor(center, 0, 30px, @negrita, 0px, 300px, 30px, yellow, absolute, 0px, 0px, 500px);
+}
+
+.campos{
+	.Contenedor(left, 0, @fuente, @negrita, 20px, 300px, @altura, black, @posicion, @superior, 2px, 0px);
+}

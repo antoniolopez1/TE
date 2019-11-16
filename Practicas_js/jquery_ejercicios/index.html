@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+</head>
+<body>
+	<form>
+		<label>Nombre</label>
+		<input type="text" id="nombre"><br>
+		<label>Apellido</label>
+		<input type="text" id="apellido"><br>
+		<label>Edad</label>
+		<input type="text" id="edad"><br>
+		<input type="button" value="Enviar" onclick="Capturar()">
+	</form>
+	<script type="text/javascript">
+		function registro(nombre, apellido, edad) {
+			this.nombre=nombre;
+			this.apellido=apellido;
+			this.edad=edad;
+		}
+		function Capturar(){
+        	var nombre = document.getElementById("nombre").value;
+        	var apellido = document.getElementById("apellido").value;
+        	var edad = document.getElementById("edad").value;
+        	var user=[];
+        	user.push(
+        		new registro(nombre,apellido,edad)
+        		);
+
+        	//for (var i = 0; i < user.length; i++) {
+        	//	document.write("Nombre: "+user[i].nombre+", Apellido: "+user[i].apellido);
+
+       // 		 	}
+        LocalStorage.setItem("nombre",JSON.stringify(user));
+       //LocalStorage.setItem("nombre",JSON.stringify(user));
+      var leer=JSON.parse(LocalStorage.getItem("nombre"));
+      // console.log(leer);
+       for (var i = 0; i < leer.length; i++) {
+        		//document.write("Nombre: "+leer[i].nombre+", Apellido: "+leer[i].apellido);
+        	}
+        	
+       }
+		
+	</script>
+</body>
+</html>

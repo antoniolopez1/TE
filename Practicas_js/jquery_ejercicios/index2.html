@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        
+        var Capturar = function(){
+        let lstNumero = document.getElementsByClassName("numero"),
+            arrayGuardar = [];         
+        for (var i = 0; i < lstNumero.length; i++) {    
+            arrayGuardar[i] = lstNumero[i].value;
+            console.log (lstNumero[i].value);     
+            }       
+            
+        }
+    </script>
+    <label>Nombre</label>
+    <input type="text" class="form"><br>
+    <label></label>
+    <input type="text" class="form"><br>
+    <label></label>
+    <input type="text" class="form"><br>
+    <input type="button" value="Capturar" onclick="Capturar()">
+</body>
+</html>

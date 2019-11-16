@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script>
+		function Usuario(nombre, ocupacion){
+			this.nombre=nombre;
+			this.ocupacion= ocupacion;
+		}
+		var user= new Usuario("Antonio","Programador");
+		var user1= new Usuario("Marcianito","100% Real");
+		ar=[];
+		ar.push(user);
+		ar.push(user1)
+		for (var i = 0; i < ar.length; i++) {
+			console.log(i, "nombre: ", ar[i].nombre,", ocupacion: ", ar[i].ocupacion);
+			
+		}		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
